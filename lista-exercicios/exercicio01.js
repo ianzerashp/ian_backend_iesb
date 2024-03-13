@@ -8,6 +8,8 @@ let nota3 = Number(prompt("Insira a terceira nota: "));
 let nota4 = Number(prompt("Insira a quarta nota: "));
 let media = (nota1 + nota2 + nota3 + nota4) / 4;
 
+console.log("Sua média foi de: " + media);
+
 if(media >= 7) {
     console.log("Você foi aprovado!")
 } else {
