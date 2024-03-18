@@ -6,7 +6,7 @@ let custoFabrica = Number(prompt("Insira o custo de fábrica do carro em reais: 
 
 // Aqui, pra reduzir o código, somei o percentual do distribuidor e os impostos e armazenei em uma só variável
 
-let taxas = custoFabrica * (78 / 100);
+let taxas = custoFabrica * (73 / 100);
 
 let custoFinal = custoFabrica + taxas;
 
