@@ -34,9 +34,17 @@ router.get('/pessoas/:id', (req, res) => {
 // CREATE -> Adicionar uma nova pessoa na lista
 
 router.post('/pessoas', (req, res) => {
-    const novaPessoa = req.body
+    const dadosPessoa = req.body
+    const novaPessoa = {
+        nome: dadosPessoa.nome,
+        idade: dadosPessoa.idade,
+        email: dadosPessoa.email,
+        telefone: dadosPessoa.telefone
+    }
+
     pessoas.push(novaPessoa)
-    res.json({ mensagem: "Você adicionou uma nova pessoa na lista!" })
+
+    res.json({ mensagem: "Pessoa adicionada com sucesso!"})
 })
 
 // UPDATE -> Atualizar uma pessoa existente pelo ID
