@@ -1,0 +1,754 @@
+{
+	"info": {
+		"_postman_id": "ed7625c3-aeec-49ce-9362-85f47f717905",
+		"name": "PROVA-API-FUTEBOL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33176051"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ian\",\r\n    \"email\": \"ianteste@email.com\",\r\n    \"senha\": \"testando123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}auth/registrar",
+							"host": [
+								"{{URL}}auth"
+							],
+							"path": [
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ianteste@email.com\",\r\n    \"senha\": \"testando123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}auth/login",
+							"host": [
+								"{{URL}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Criar",
+			"item": [
+				{
+					"name": "Criar departamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Saúde\",\r\n    \"descricao\": \"Responsável pelo cuidado médico e bem-estar físico dos jogadores e equipe técnica.\",\r\n    \"numeroDeFuncionarios\": 8,\r\n    \"dataCriacao\": \"1938-03-22\",\r\n    \"objetivo\": \"Realizar exames médicos regulares, tratar lesões, oferecer suporte nutricional e promover a saúde e o condicionamento físico geral.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}departamentos",
+							"host": [
+								"{{URL}}departamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar cargo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Fisioterapeuta\",\r\n    \"descricao\": \"Responsável por prevenir e tratar lesões dos jogadores, garantindo que estejam em condições físicas ideais para treinos e jogos.\",\r\n    \"requisitos\": \"Formação em Fisioterapia, experiência com atletas, conhecimento em técnicas de reabilitação e prevenção de lesões.\",\r\n    \"funcao\": \"Prevenção, tratamento e reabilitação de lesões dos jogadores.\",\r\n    \"departamento\": \"665e81c1f8db62f3f0b16fa0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}cargos",
+							"host": [
+								"{{URL}}cargos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar comissão técnica",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Luiz Fernando dos Santos\",\r\n    \"idade\": 38,\r\n    \"salario\": 80000,\r\n    \"dataContratacao\": \"2019-04-15T00:00:00.000Z\",\r\n    \"cargo\": \"665f7b53424243d67ee52040\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}comissao-tecnica",
+							"host": [
+								"{{URL}}comissao-tecnica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar funcionário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Camila Morano\",\r\n    \"idade\": 34,\r\n    \"salario\": 90000,\r\n    \"dataContratacao\": \"2024-01-13T00:00:00.000Z\",\r\n    \"cargo\": \"665f7db2706592e38c55367a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}funcionarios",
+							"host": [
+								"{{URL}}funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar posição",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Ponta Direita\",\r\n  \"abreviacao\": \"PD\",\r\n  \"descricao\": \"Atua na faixa lateral direita do campo, buscando driblar os adversários e cruzar a bola para os atacantes.\",\r\n  \"funcao\": \"Ataque\",\r\n  \"requisitos\": \"Velocidade, habilidade no drible, cruzamento preciso.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}posicoes",
+							"host": [
+								"{{URL}}posicoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar jogador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Raniele\",\r\n    \"idade\": 27,\r\n    \"nacionalidade\": \"Brasileiro\",\r\n    \"salario\": 350000,\r\n    \"posicao\": \"665e28d98ce8732032e4a8bc\",\r\n    \"cargo\": \"665f70af64b8654d88c05f6f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jogadores",
+							"host": [
+								"{{URL}}jogadores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buscar todos",
+			"item": [
+				{
+					"name": "Buscar departamentos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}departamentos",
+							"host": [
+								"{{URL}}departamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar cargos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}cargos",
+							"host": [
+								"{{URL}}cargos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar comissão técnica",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}comissao-tecnica",
+							"host": [
+								"{{URL}}comissao-tecnica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar funcionários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}funcionarios",
+							"host": [
+								"{{URL}}funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar posições",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posicoes",
+							"host": [
+								"{{URL}}posicoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar jogadores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jogadores",
+							"host": [
+								"{{URL}}jogadores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buscar por ID",
+			"item": [
+				{
+					"name": "Buscar departamento por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}departamentos/665e80c8f8db62f3f0b16f99",
+							"host": [
+								"{{URL}}departamentos"
+							],
+							"path": [
+								"665e80c8f8db62f3f0b16f99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar cargo por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}cargos/665e1812356b86397b26209d",
+							"host": [
+								"{{URL}}cargos"
+							],
+							"path": [
+								"665e1812356b86397b26209d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar comissão técnica por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}comissao-tecnica/665e205a052bd6409d9f0afe",
+							"host": [
+								"{{URL}}comissao-tecnica"
+							],
+							"path": [
+								"665e205a052bd6409d9f0afe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar funcionário por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}funcionarios/665e27198ce8732032e4a8ac",
+							"host": [
+								"{{URL}}funcionarios"
+							],
+							"path": [
+								"665e27198ce8732032e4a8ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar posição por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posicoes/665e28ba8ce8732032e4a8ba",
+							"host": [
+								"{{URL}}posicoes"
+							],
+							"path": [
+								"665e28ba8ce8732032e4a8ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar jogador por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}jogadores/665e8807f8db62f3f0b16fac",
+							"host": [
+								"{{URL}}jogadores"
+							],
+							"path": [
+								"665e8807f8db62f3f0b16fac"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Atualizar",
+			"item": [
+				{
+					"name": "Atualizar departamento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Marketing\",\r\n    \"descricao\": \"Responsável por promover o clube e suas atividades, atrair torcedores e patrocinadores.\",\r\n    \"numeroDeFuncionarios\": 13,\r\n    \"dataCriacao\": \"2010-06-17\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}departamentos/665e80c8f8db62f3f0b16f99",
+							"host": [
+								"{{URL}}departamentos"
+							],
+							"path": [
+								"665e80c8f8db62f3f0b16f99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar cargo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Médico\",\r\n    \"descricao\": \"Responsável pelo atendimento médico dos jogadores\",\r\n    \"requisitos\": \"Formação em medicina esportiva, experiência em atendimento a atletas\",\r\n    \"funcao\": \"Realizar exames médicos, acompanhar tratamentos e prevenir lesões\",\r\n    \"departamento\": \"665e81c1f8db62f3f0b16fa0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}cargos/665e22af052bd6409d9f0b0d",
+							"host": [
+								"{{URL}}cargos"
+							],
+							"path": [
+								"665e22af052bd6409d9f0b0d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar comissão técnica",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"António Oliveira\",\r\n    \"idade\": 41,\r\n    \"salario\": 700000,\r\n    \"dataContratacao\": \"2024-02-09T00:00:00.000Z\",\r\n    \"cargo\": \"665e1c13356b86397b2620a2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}comissao-tecnica/665e1fd1052bd6409d9f0afb",
+							"host": [
+								"{{URL}}comissao-tecnica"
+							],
+							"path": [
+								"665e1fd1052bd6409d9f0afb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar funcionário",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Dr. Leonardo Hirao\",\r\n    \"idade\": 35,\r\n    \"salario\": 25000,\r\n    \"dataContratacao\": \"2019-04-01T00:00:00.000Z\",\r\n    \"cargo\": \"665e22af052bd6409d9f0b0d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}funcionarios/665f7d22706592e38c553671",
+							"host": [
+								"{{URL}}funcionarios"
+							],
+							"path": [
+								"665f7d22706592e38c553671"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar posição",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Zagueiro\",\r\n    \"abreviacao\": \"ZAG\",\r\n    \"descricao\": \"Responsável por proteger a área do time e impedir que os jogadores chutem ao seu gol.\",\r\n    \"funcao\": \"Defesa\",\r\n    \"requisitos\": \"Boa marcação, antecipação, jogo aéreo.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}posicoes/665e28b28ce8732032e4a8b8",
+							"host": [
+								"{{URL}}posicoes"
+							],
+							"path": [
+								"665e28b28ce8732032e4a8b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar jogador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Yuri Alberto\",\r\n    \"idade\": 23,\r\n    \"nacionalidade\": \"Brasileiro\",\r\n    \"salario\": 1700000,\r\n    \"posicao\": \"665e28e48ce8732032e4a8be\",\r\n\t\"cargo\": \"665f70af64b8654d88c05f6f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jogadores/665e899bf8db62f3f0b16fbd",
+							"host": [
+								"{{URL}}jogadores"
+							],
+							"path": [
+								"665e899bf8db62f3f0b16fbd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deletar",
+			"item": [
+				{
+					"name": "Remover departamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}departamentos/665e9359b4d1e66bb34b2231",
+							"host": [
+								"{{URL}}departamentos"
+							],
+							"path": [
+								"665e9359b4d1e66bb34b2231"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover cargo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}cargos/665e9392b4d1e66bb34b2235",
+							"host": [
+								"{{URL}}cargos"
+							],
+							"path": [
+								"665e9392b4d1e66bb34b2235"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover comissão técnica",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}comissao-tecnica/665e941bd2a78c24a6e37558",
+							"host": [
+								"{{URL}}comissao-tecnica"
+							],
+							"path": [
+								"665e941bd2a78c24a6e37558"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover funcionário",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}funcionarios/665e948dd2a78c24a6e3755d",
+							"host": [
+								"{{URL}}funcionarios"
+							],
+							"path": [
+								"665e948dd2a78c24a6e3755d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover posição",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posicoes/665e94b1d2a78c24a6e37560",
+							"host": [
+								"{{URL}}posicoes"
+							],
+							"path": [
+								"665e94b1d2a78c24a6e37560"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover jogador",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}jogadores/665e94c4d2a78c24a6e37563",
+							"host": [
+								"{{URL}}jogadores"
+							],
+							"path": [
+								"665e94c4d2a78c24a6e37563"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000/",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiSWFuIiwiZW1haWwiOiJpYW50ZXN0ZUBlbWFpbC5jb20iLCJpYXQiOjE3MTc1MzYwNTMsImV4cCI6MTcxNzUzNzI1M30.aOChcIO4y9snupoo1XfZ6r6gi6H0MW83fgtfxgeRb0I",
+			"type": "string"
+		}
+	]
+}
